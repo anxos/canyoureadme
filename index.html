@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Can you read me?</title>
+<!-- bootstrap cdn and jquery cdn -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- custom css -->
+<link rel="stylesheet" href="master.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <!-- accordion -->
+            <div id="accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default"><!-- tab one -->
+                    <div id="galician-tab" class="panel-heading" role="tab"><!-- tab title -->
+                        <h4 class="panel-title">
+                            <a class="btn btn-default" role="button" data-toggle="collapse" data-parent="#accordion"
+                                href="#galician-content" aria-expanded="true" aria-controls="#galician-content">
+                                Galego
+                            </a>
+                        </h4>
+                    </div><!-- end of panel-heading: tab title -->
+                    <div id="galician-content" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="galician-tab"><!-- content gal -->
+                        <div class="panel-body">
+                            <h1>Pódesme ler?</h1>
+                            <blockquote>
+                                <p>
+                                Dacordo cun investigador da Universidade De Cambridge, non importa a orde 
+                                das letras nunha palabra. O único importante é que a primeira e a derradeira
+                                letra estean no sitio correcto.
+                                </p>
+                                <footer>
+                                    <a href="http://www.mrc-cbu.cam.ac.uk/people/matt.davis/cmabridge/">
+                                        www.mrc-cbu.cam.ac.uk/people/matt.davis/cmabridge/ 
+                                    </a>
+                                </footer>
+                            </blockquote>
+                            <p>Escribe o teu texto aquí</p>
+                            <textarea id="galician-text" class="form-control" name="galician-text" rows="5"></textarea>
+                            <button id="gal-btn" name="gal-btn" class="btn btn-primary">embarullar!</button>
+                        </div>
+                    </div>
+                </div><!-- end of tab one -->
+                <div class="panel panel-default"><!-- tab two -->
+                    <div id="english-tab" class="panel-heading" role="tab">
+                        <h4 class="panel-title" >
+                            <a class="btn btn-default" href="#english-content" role="button" data-toggle="collapse" data-parent="#accordion"
+                                aria-expanded="true" aria-controls="#english-content">
+                                English
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="english-content" class="panel-collapse collapse" role="tabpanel" aria-labelledby="english-tab"><!-- english content -->
+                        <div class="panel-body">
+                            <h1>Can you read me?</h1>
+                            <blockquote>
+                                <p>
+                                According to a researcher at Cambridge University, it doesn't matter 
+                                in what order the letters in a word are, the only important thing is that the 
+                                first and last letter be at the right place.
+                                </p>
+                                <footer>
+                                    <a href="http://www.mrc-cbu.cam.ac.uk/people/matt.davis/cmabridge/">
+
+                                        www.mrc-cbu.cam.ac.uk/people/matt.davis/cmabridge/ </a>
+                                </footer>
+                            </blockquote>
+                            <p>Write your text here</p>
+                            <textarea id="english-text" class="form-control" name="english-text" rows="5"></textarea>
+                            <button class="btn btn-primary">jumble!</button>
+                        </div>
+                    </div>
+                </div><!-- end of tab two -->
+            </div><!-- end of accordion -->
+        </div><!-- end of col-10-->
+    </div><!--end of main row -->
+</div><!-- end of container -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <p>firefox placeholder</p>
+            </div>
+            <div class="col-sm-4">
+                <p>image credit</p>
+            </div>
+            <div class="col-sm-4">
+                <p>twitter handle</p>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <p>firefox placeholder</p>
+            </div>
+            <div class="col-xs-6">
+                <p>twitter handle</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+-->
+<script src="jumble.js"></script>
+</body>
+</html>
