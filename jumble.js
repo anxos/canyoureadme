@@ -19,7 +19,9 @@ $(document).ready(function(){
 'glImageCredit':'Imaxe de Fondo ',
 'enImageCredit':'Background image ',
 'glTwitter':'Feito por ',
-'enTwitter':'Made by '
+'enTwitter':'Made by ',
+'glErase': 'borrar',
+'enErase':'erase'
     };
 
     /* change to galician */
@@ -34,6 +36,7 @@ $(document).ready(function(){
         $('span#firefox').text(CONSTANTS.glFirefox);
         $('span#image-credit').text(CONSTANTS.glImageCredit);
         $('span#twitter-handle').text(CONSTANTS.glTwitter);
+        $('button#erase-btn').text(CONSTANTS.glErase);
     });
     /* change to english */
     $('#en-btn').click(function(){
@@ -47,6 +50,7 @@ $(document).ready(function(){
         $('span#firefox').text(CONSTANTS.enFirefox);
         $('span#image-credit').text(CONSTANTS.enImageCredit);
         $('span#twitter-handle').text(CONSTANTS.enTwitter);
+        $('button#erase-btn').text(CONSTANTS.enErase);
 
     });
 
