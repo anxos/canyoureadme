@@ -19,7 +19,9 @@ $(document).ready(function(){
 'glImageCredit':'Imaxe de Fondo ',
 'enImageCredit':'Background image ',
 'glTwitter':'Feito por ',
-'enTwitter':'Made by '
+'enTwitter':'Made by ',
+'glErase':'borrar',
+'enErase':'erase'
     };
 
     /* change to galician */
@@ -34,6 +36,7 @@ $(document).ready(function(){
         $('span#firefox').text(CONSTANTS.glFirefox);
         $('span#image-credit').text(CONSTANTS.glImageCredit);
         $('span#twitter-handle').text(CONSTANTS.glTwitter);
+        $('button#erase-btn').text(CONSTANTS.glErase);
     });
     /* change to english */
     $('#en-btn').click(function(){
@@ -47,54 +50,55 @@ $(document).ready(function(){
         $('span#firefox').text(CONSTANTS.enFirefox);
         $('span#image-credit').text(CONSTANTS.enImageCredit);
         $('span#twitter-handle').text(CONSTANTS.enTwitter);
+        $('button#erase-btn').text(CONSTANTS.enErase);
 
     });
 
-    /* jumble text functionality */
+        /* jumble text functionality */
 
-    function jumbleText(text) {
-        //split text
-        var jumbleArray = text.split(" ");
-        var newArray = [];
-        $.each(jumbleArray, function(index,el){
-            if(el.length > 3) {
-                // exclude first and last from shuffling
-                var toJumble = el.substr(1, el.length-2);
-                // shuffle word
-                var shuffled =  shuffleWord(toJumble);
-                var w  = el.substr(0,1)+shuffled+el.substr(el.length-1,el.length);
-                newArray.push(w);
-            } else {
-                newArray.push(el);
-            }
+        function jumbleText(text) {
+            //split text
+            var jumbleArray = text.split(" ");
+            var newArray = [];
+            $.each(jumbleArray, function(index,el){
+                if(el.length > 3) {
+                    // exclude first and last from shuffling
+                    var toJumble = el.substr(1, el.length-2);
+                    // shuffle word
+                    var shuffled =  shuffleWord(toJumble);
+                    var w  = el.substr(0,1)+shuffled+el.substr(el.length-1,el.length);
+                    newArray.push(w);
+                } else {
+                    newArray.push(el);
+                }
+            });
+
+            //shuffled text
+            return(newArray.join(' '));
+        };
+
+        function shuffleWord(word) {
+            //split to char array
+            var wordArray = word.split("");
+            wordArray.sort(function(){ return 0.5 - Math.random()});
+            return(wordArray.join(''));
+        };
+
+
+        /* clean textarea */
+        $('button#erase-btn').click(function(){
+            $('textarea').val('');   
         });
 
-        //shuffled text
-        return(newArray.join(' '));
-    };
-
-    function shuffleWord(word) {
-        //split to char array
-        var wordArray = word.split("");
-        wordArray.sort(function(){ return 0.5 - Math.random()});
-        return(wordArray.join(''));
-    };
-
-
-    /* clean textarea */
-    $('button#erase-btn').click(function(){
-        $('textarea').val('');   
-    });
-
-    /* submit text */
-    $('#submit-btn').click(function(){
-        //get text
-        var text = $('textarea').val();
-        //sanitize -> no need using val()?
-        //jumble
-        var jumble = 'JUMBLED TEXT';
-        jumble = jumbleText(text);
-        //set jumbled text
-        $('textarea').val(jumble);
-    });
+        /* submit text */
+        $('#submit-btn').click(function(){
+            //get text
+            var text = $('textarea').val();
+            //sanitize -> no need using val()?
+            //jumble
+            var jumble = 'JUMBLED TEXT';
+            jumble = jumbleText(text);
+            //set jumbled text
+            $('textarea').val(jumble);
+        });
 });
