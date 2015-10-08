@@ -27,11 +27,10 @@ body {
     padding: 2%;
 }
 /* lang buttons */
-.btn-group {
+
+.btn-lang {
     font-variant: all-small-caps;
     letter-spacing: 0.1em;
-}
-.btn-lang {
     font-weight: 700;
     background-color: #000;
     color: #fff;
@@ -66,16 +65,28 @@ blockquote {
     }
 
 }
-/* helpers */
-#text-helper, #submit-btn {
+/* text  helpers */
+#text-helper, #submit-btn, #erase-btn {
     font-weight: 700;
 }
-#submit-btn {
+#submit-btn, #erase-btn {
     margin-top: 2%;
 }
 #dblclick {
     color: #666;
     font-style: italic;
+}
+
+/* erase button */
+.btn-black {
+    background-color: #000;
+    border-color: #666;
+    color: #fff;
+}
+.btn-black:hover, .btn-black:focus {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
 }
 
 /* footer */
