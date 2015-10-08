@@ -1,4 +1,0 @@
-# canyoureadme
-
-Pódesme ler
-===========
